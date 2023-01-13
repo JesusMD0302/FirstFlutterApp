@@ -7,8 +7,6 @@ class MyAppState extends ChangeNotifier {
 
   GlobalKey? historyListKey;
 
-  var dataCard = false;
-
   void getNext() {
     history.insert(0, current);
     var animatedList = historyListKey?.currentState as AnimatedListState?;
@@ -32,11 +30,6 @@ class MyAppState extends ChangeNotifier {
 
   void removeFavorite(WordPair pair) {
     favorites.remove(pair);
-    notifyListeners();
-  }
-
-  void toggleActiveDataCard() {
-    dataCard = !dataCard;
     notifyListeners();
   }
 }
